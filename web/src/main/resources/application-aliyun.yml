@@ -1,0 +1,11 @@
+aliyuncs:
+  # SYSTEM
+  region-id: <your region-id>
+  version: <your version>
+  # ACL
+  access-key-id: <your access-key-id>
+  access-secret: <your access-secret>
+  # OSS
+  bucket-name: <your bucket-name>
+  endpoint: <your endpoint>
+  image-url: <your image-url>

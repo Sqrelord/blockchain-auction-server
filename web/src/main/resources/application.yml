@@ -1,0 +1,63 @@
+server:
+  port: 8085
+spring:
+  profiles:
+    active:
+      - aliyun
+  devtools:
+    restart:
+      enabled: true
+  datasource:
+    name: auction_app
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:tcp:localhost:9092/auction_app;DB_CLOSE_ON_EXIT=FALSE;WRITE_DELAY=0;LOCK_TIMEOUT=10000
+    username: auction
+    password: 123456
+    hikari:
+      max-lifetime: 120000
+      connection-test-query: SELECT 1
+  jpa:
+    database: H2
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+    properties:
+      enable_lazy_load_no_trans: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jackson:
+    date-format: com.fasterxml.jackson.databind.util.StdDateFormat
+    locale: zh_CN
+    time-zone: GMT+8
+  liquibase:
+    enabled: false
+  redis:
+    host: localhost
+    password: 123456
+  data:
+    redis:
+      repositories:
+        enabled: false
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+  output:
+    ansi:
+      enabled: always
+
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: group-blockchain-auction
+  # CUSTOMIZE
+  topic: blockchain-auction
+  group-bid: bid-blockchain-auction
+  tag-bid: bid
+  group-order: order-blockchain-auction
+  tag-order: order
+  group-sms: sms-blockchain-auction
+  tag-sms: sms

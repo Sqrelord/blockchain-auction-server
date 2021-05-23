@@ -1,0 +1,36 @@
+plugins {
+    id "net.corda.plugins.cordapp"
+    id "net.corda.plugins.cordformation"
+    id "net.corda.plugins.quasar-utils"
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+    cordaRuntime "net.corda:corda:$corda_release_version"
+    cordaCompile "net.corda:corda-core:$corda_release_version"
+    cordaCompile "net.corda:corda-node-api:$corda_release_version"
+    cordaCompile "net.corda:corda-finance-contracts:$corda_release_version"
+    cordaCompile "net.corda:corda-finance-workflows:$corda_release_version"
+    cordaCompile "com.r3.corda.lib.ci:ci-workflows:$corda_confidential_id_release_version"
+    cordaCompile "com.r3.corda.lib.accounts:accounts-contracts:$corda_accounts_release_version"
+    cordaCompile "com.r3.corda.lib.accounts:accounts-workflows:$corda_accounts_release_version"
+    cordaRuntime "org.apache.logging.log4j:log4j-slf4j-impl:2.11.2"
+    cordaRuntime "net.corda:corda-testserver:$corda_release_version"
+    testCompile "junit:junit:4.12"
+    testCompile "net.corda:corda-node-driver:$corda_release_version"
+    compileOnly "net.corda:corda-testserver-impl:$corda_release_version"
+}
+
+compileKotlin {
+    kotlinOptions {
+        languageVersion = "1.4"
+        apiVersion = "1.4"
+        jvmTarget = "1.8"
+        javaParameters = true
+    }
+}
+
+task testNodes(type: Test, dependsOn: testClasses) {
+    include "edu/dhu/auction/node/test/**"
+}

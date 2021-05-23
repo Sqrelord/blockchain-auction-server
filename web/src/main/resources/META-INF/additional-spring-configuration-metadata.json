@@ -1,0 +1,74 @@
+{
+  "properties": [
+    {
+      "name": "aliyuncs.region-id",
+      "type": "java.lang.String",
+      "description": "阿里云 regionId."
+    },
+    {
+      "name": "aliyuncs.version",
+      "type": "java.lang.String",
+      "description": "阿里云 version."
+    },
+    {
+      "name": "aliyuncs.access-key-id",
+      "type": "java.lang.String",
+      "description": "阿里云子用户 accessKeyId."
+    },
+    {
+      "name": "aliyuncs.access-secret",
+      "type": "java.lang.String",
+      "description": "阿里云子用户 accessSecret."
+    },
+    {
+      "name": "aliyuncs.bucket-name",
+      "type": "java.lang.String",
+      "description": "阿里云OSS bucketName."
+    },
+    {
+      "name": "aliyuncs.endpoint",
+      "type": "java.lang.String",
+      "description": "阿里云OSS endpoint."
+    },
+    {
+      "name": "aliyuncs.image-url",
+      "type": "java.lang.String",
+      "description": "阿里云OSS 图片URL."
+    },
+    {
+      "name": "rocketmq.group-order",
+      "type": "java.lang.String",
+      "description": "RocketMQ order group name."
+    },
+    {
+      "name": "rocketmq.tag-order",
+      "type": "java.lang.String",
+      "description": "RocketMQ 生成订单消息TAG."
+    },
+    {
+      "name": "rocketmq.group-sms",
+      "type": "java.lang.String",
+      "description": "RocketMQ SMS group name."
+    },
+    {
+      "name": "rocketmq.tag-sms",
+      "type": "java.lang.String",
+      "description": "RocketMQ 发送短信消息TAG."
+    },
+    {
+      "name": "rocketmq.group-bid",
+      "type": "java.lang.String",
+      "description": "RocketMQ Bid group name."
+    },
+    {
+      "name": "rocketmq.tag-bid",
+      "type": "java.lang.String",
+      "description": "RocketMQ 发送出价消息TAG."
+    },
+    {
+      "name": "rocketmq.topic",
+      "type": "java.lang.String",
+      "description": "RocketMQ topic."
+    }
+  ]
+}

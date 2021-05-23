@@ -1,0 +1,41 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    compile.exclude group: "org.apache.logging.log4j", module: "log4j-slf4j-impl"
+}
+
+dependencies {
+    implementation project(":node")
+    implementation 'com.alibaba:fastjson:1.2.75'
+    implementation 'com.aliyun.oss:aliyun-sdk-oss:3.11.2'
+    implementation 'com.h2database:h2:1.4.199'
+    implementation 'cn.hutool:hutool-all:5.6.0'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    implementation "net.corda:corda-rpc:$corda_release_version"
+    implementation "net.corda:corda-jackson:$corda_release_version"
+    implementation 'org.apache.rocketmq:rocketmq-spring-boot-starter:2.2.0'
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:$spring_boot_version"
+    implementation "org.springframework.boot:spring-boot-starter-data-redis:$spring_boot_version"
+    implementation "org.springframework.boot:spring-boot-starter-security:$spring_boot_version"
+    implementation "org.springframework.boot:spring-boot-starter-web:$spring_boot_version"
+    implementation "org.springframework.boot:spring-boot-starter-websocket:$spring_boot_version"
+    implementation "org.springframework.boot:spring-boot-devtools:$spring_boot_version"
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor:$spring_boot_version"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:$spring_boot_version"
+    testImplementation "junit:junit:4.12"
+}
+
+bootJar {
+    archivesBaseName = 'auction-app'
+    archiveVersion = '1.0.0.beta'
+}
+
+task runAuctionClient(type: JavaExec, dependsOn: ['assemble']) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'edu.dhu.auction.web.WebServerApplication'
+}

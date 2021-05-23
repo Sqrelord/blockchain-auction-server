@@ -1,0 +1,4 @@
+rootProject.name = 'blockchain-auction'
+include 'web'
+include 'node'
+

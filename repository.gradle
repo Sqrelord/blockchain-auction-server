@@ -1,0 +1,13 @@
+repositories {
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
+    maven { url "http://maven.aliyun.com/nexus/content/repositories/public" }
+    maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter" }
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+    maven { url 'https://software.r3.com/artifactory/corda' }
+    maven { url "https://software.r3.com/artifactory/corda-lib" }
+    maven { url "https://software.r3.com/artifactory/corda-lib-dev" }
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.gradle.org/gradle/libs-releases' }
+    maven { url "https://repo.spring.io/libs-milestone" }
+}
